@@ -10,11 +10,11 @@
 }
 @font-face {
   font-family: edit ;
-  src: url("fonts/PPEditorialNew-UltralightItalic-BF644b214ff1e9b.otf");
+  src: url("fonts/Vogue-Regular.otf");
   
 }
 body {
-  in-height: 100vh;
+  min-height: 100vh;
   margin: 0;
   display: grid;
   place-items: center;

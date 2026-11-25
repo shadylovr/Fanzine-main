@@ -10,7 +10,7 @@
 }
 @font-face {
   font-family: edit ;
-  src: url("fonts/PPEditorialNew-UltralightItalic-BF644b214ff1e9b.otf");
+  src: url("fonts/Vogue-Regular.otf");
   
 }
 body {
@@ -20,33 +20,36 @@ body {
   place-items: center;
   padding: 24px 12px;
   overflow-x: hidden;
-  background: #161616 url("assets/fondo.jpg") center / cover fixed no-repeat;
+  background: #161616 url("assets/fondo4.jpg") center / cover fixed no-repeat;
 }
 
 .portrait-layout {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: min(94vw, 1150px);
+  max-width: 100%;
   gap: 18px;
   transform: translateX(-24px);
 }
 
 .portrait-layout h1 {
-  margin: 0;
-  color: #69693d;
+  margin: 64px 0 0;
+  max-width: 100%;
+  color: #fffce0;
   font-family: edit;
-  font-size: clamp(72px, 5.6vw, 98px);
-  font-weight: 700;
-  letter-spacing: .02em;
+  font-size: clamp(44px, 9vw, 98px);
+  font-weight: 400;
+  text-shadow: none;
   line-height: .95;
   text-align: center;
-  
-  text-transform: uppercase;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 .click-hint {
   margin: 0;
-  color: #f3efe4;
+  color: #0c0c0c;
   font-family: edit;
   font-size: clamp(13px, 1.5vw, 18px);
   letter-spacing: .12em;
