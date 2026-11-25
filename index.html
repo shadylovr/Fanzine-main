@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTERVIEW // ISSUE 568</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <main class="mesa">
+    <!-- Contenedor 3D de la revista -->
+    <div class="revista" id="revista" role="button" tabindex="0" aria-label="Abrir revista">
+      
+      <!-- Primera página interior (aparece al girar la tapa) -->
+      <div class="pagina-interior">
+        <div class="contenido-previo">
+          <span class="etiqueta">SEPTEMBER 2026 // ISSUE 568</span>
+          <h2>SZILVESZTER MAKO</h2>
+          <div class="linea-editorial"></div>
+          <p>Descubre al fotógrafo más influyente del 2026.</p>
+          <span class="cargando">ABRIENDO EDICIÓN...</span>
+        </div>
+      </div>
+
+      <!-- Portada física (Tapa móvil) -->
+      <div class="portada">
+        <div class="lomo"></div>
+        <img src="assets/magazine.jpg" alt="Portada Interview Issue 568 - Sandra Bullock" class="img-portada">
+        <div class="brillo-papel"></div>
+      </div>
+
+    </div>
+
+    <p class="indicador-mesa">HAZ CLIC EN LA PORTADA PARA ABRIR</p>
+  </main>
+
+    <audio id="sonido-pagina" src="audio/paper.mp3" preload="auto"></audio>
+  <script>
+    const revista = document.getElementById('revista');
+    const sonidoPagina = document.getElementById('sonido-pagina');
+    let abriendo = false;
+
+    function abrirRevista() {
+      if (abriendo) return;
+      abriendo = true;
+
+      revista.classList.add('abierta');
+      sonidoPagina.currentTime = 0;
+
+      
+      sonidoPagina.onended = () => {
+        window.location.href = 'inside.html';
+      };
+
+      sonidoPagina.play().catch((error) => {
+        console.error('Error de audio:', error);
+        setTimeout(() => {
+          window.location.href = 'inside.html';
+        }, 1150);
+      });
+    }
+
+    revista.addEventListener('click', abrirRevista);
+    
+    revista.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        abrirRevista();
+      }
+    });
+  </script>
+
+</body>
+</html>

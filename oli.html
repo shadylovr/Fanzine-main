@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrevista — Olivia Rodrigo</title>
+  <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+  <main class="portrait-layout">
+    <h1>Vogue November 2026</h1>
+    <p class="click-hint">Haz clic y descubre la portada</p>
+    <button class="image-switch" type="button" aria-label="Alternar entre la imagen en sombra y la imagen normal" aria-pressed="false">
+      <img class="shadow-image" src="assets/sombra.png" alt="">
+      <img class="normal-image" src="assets/oli.jpg" alt="Portada editorial de Olivia Rodrigo">
+    </button>
+    <div class="video-row">
+      <video class="jen-video" src="assets/wiv.mov" controls autoplay muted loop playsinline preload="auto" aria-label="Video de Olivia Rodrigo"></video>
+      <div class="video-copy">La edición de Vogue November 2026 estuvo a cargo de Szilveszter Makó y el estilismo de Tabitha Simmons, con una estética pictórica, teatral y surrealista.</div>
+    </div>
+    <div class="photo-gallery">
+      <img src="assets/oli.jpg" alt="Fotografía editorial de Olivia Rodrigo 1">
+      <img src="assets/wall.jpg" alt="Fotografía editorial de Olivia Rodrigo 2">
+      <img src="assets/wall2.jpg" alt="Fotografía editorial de Olivia Rodrigo 3">
+    </div>
+    <nav class="profile-navigation" aria-label="Navegación">
+      <a href="inside.html">Página anterior</a>
+      <a href="index.html">Volver al inicio</a>
+    </nav>
+  </main>
+  <audio id="cover-sound" src="audio/beat.mp3" preload="auto"></audio>
+  <audio id="app-sound" src="audio/app.mp3" preload="auto"></audio>
+
+  <script>
+    const imageSwitch = document.querySelector('.image-switch');
+    const coverSounds = [
+      document.getElementById('cover-sound'),
+      document.getElementById('app-sound')
+    ];
+
+    imageSwitch.addEventListener('click', () => {
+      const showingNormal = imageSwitch.classList.toggle('is-normal');
+      imageSwitch.setAttribute('aria-pressed', String(showingNormal));
+      coverSounds.forEach((sound) => {
+        sound.currentTime = 0;
+        sound.play().catch((error) => {
+          console.error(`No se pudo reproducir ${sound.src}.`, error);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

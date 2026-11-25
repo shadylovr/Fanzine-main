@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrevista — Edición 568</title>
+  <link rel="stylesheet" href="syle1.css">
+</head>
+<body>
+  <main class="fanzine" aria-label="Revista desplegable">
+    <div class="book" id="book">
+      <div class="center-fold" aria-hidden="true"></div>
+
+      <article class="spread active" data-page="1" aria-label="Página uno">
+        <section class="page page-left cover-page">
+          <div class="vertical-label">Edición de otoño</div>
+          <p class="page-number">01</p>
+          <h1>Szilveszter<br><em>Makó</em></h1>
+          <p class="intro">Una introspección a través de su proceso creativo.</p>
+        </section>
+
+        <section class="page page-right portrait-page">
+          <img src="assets/elle.jpg" alt="Retrato editorial">
+          <div class="caption">Desliza el mouse sobre la foto para revelar el color</div>
+        </section>
+      </article>
+
+      <article class="spread" data-page="2" aria-label="Página dos">
+        <section class="page page-left text-page">
+          <p class="section-name">Quien es</p>
+          <p class="dropcopy"><strong>S</strong>zilveszter Makó es un fotógrafo y director de arte húngaro (nacido en 1992) radicado en Milán, reconocido internacionalmente por su estética teatral, surrealista y pictórica en la fotografía de moda y retratos.</p>
+          
+          <blockquote>"I am evolving, simply not as quickly as you scroll."</blockquote>
+        </section>
+
+        <section class="page page-right notes-page">
+          <div class="tape">Haz click y descubre el behind the scenes</div>
+          
+          <a class="photo-link" href="https://www.vanityfair.com/video/watch/behind-the-scenes-with-bad-bunny" target="_blank" rel="noopener noreferrer" aria-label="Ver el detrás de cámaras de Bad Bunny en Vanity Fair">
+            <img src="assets/bunny.jpg" alt="Retrato editorial de Szilveszter Makó">
+          </a>
+          
+        </section>
+      </article>
+
+      <article class="spread" data-page="3" aria-label="Página tres">
+        <section class="page page-left gif-page" aria-label="Inspiración visual">
+          <div class="gif-gallery">
+            <img src="assets/giphy-5.gif" alt="Animación editorial número cinco">
+            <img src="assets/giphy-6.gif" alt="Animación editorial número seis">
+          </div>
+        </section>
+        <section class="page page-right inspo-page">
+          <h2>Inspo</h2>
+        </section>
+      </article>
+
+      <article class="spread" data-page="4" aria-label="Página cuatro">
+        <section class="page page-left cover-page">
+          <p class="page-number">04</p>
+          <h1>ENTREVISTA con<br><em>Aperture</em></h1>
+          <p class="intro">En la siguiente pagina te descubriras su arte desde 4 mundos.</p>
+        </section>
+        <section class="page page-right portrait-page">
+          <a class="photo-link" href="https://aperture-org.translate.goog/editorial/szilveszter-mako-wants-to-be-in-control/?_x_tr_sl=en&amp;_x_tr_tl=es&amp;_x_tr_hl=es&amp;_x_tr_pto=tc" target="_blank" rel="noopener noreferrer" aria-label="Leer el artículo de Szilveszter Makó en Aperture">
+            <img src="assets/h3.jpg" alt="Detalle del archivo visual">
+          </a>
+          <div class="caption">Haz click para ver la entrevista</div>
+        </section>
+      </article>
+
+      <article class="spread" data-page="5" aria-label="Página cinco">
+        <section class="page page-left people-page" aria-label="Página izquierda">
+          <h2 class="people-heading">Escoge</h2>
+          <div class="people-grid">
+            <a class="reveal-photo" href="wi.html" aria-label="Abrir la página de Willem Dafoe">
+              <img src="assets/wii.jpg" alt="Retrato editorial de Willem Dafoe">
+              <span class="photo-reveal-text" aria-hidden="true">Willem Dafoe</span>
+            </a>
+            <a class="reveal-photo" href="jenna.html" aria-label="Abrir la página de Jenna Ortega">
+              <img src="assets/jenna.jpg" alt="Retrato editorial de Jenna Ortega">
+              <span class="photo-reveal-text" aria-hidden="true">Jenna Ortega</span>
+            </a>
+          </div>
+        </section>
+        <section class="page page-right people-page" aria-label="Página derecha">
+          <h2 class="people-heading">Uno</h2>
+          <div class="people-grid">
+            <a class="reveal-photo" href="oli.html" aria-label="Abrir la página de Olivia Rodrigo">
+              <img src="assets/oli.jpg" alt="Retrato editorial de Olivia Rodrigo">
+              <span class="photo-reveal-text" aria-hidden="true">Olivia Rodrigo</span>
+            </a>
+            <a class="reveal-photo" href="fannin.html" aria-label="Abrir la página de Elle Fanning">
+              <img src="assets/fannin.jpg" alt="Retrato editorial de Elle Fanning">
+              <span class="photo-reveal-text" aria-hidden="true">Elle Fanning</span>
+            </a>
+          </div>
+        </section>
+      </article>
+
+    </div>
+
+    <nav class="pager" aria-label="Navegación de páginas">
+      <button id="prev" type="button" aria-label="Página anterior">← Anterior</button>
+      <div class="dots" aria-live="polite">
+        <button class="dot active" type="button" data-go="0" aria-label="Ir a página 1"></button>
+        <button class="dot" type="button" data-go="1" aria-label="Ir a página 2"></button>
+        <button class="dot" type="button" data-go="2" aria-label="Ir a página 3"></button>
+        <button class="dot" type="button" data-go="3" aria-label="Ir a página 4"></button>
+        <button class="dot" type="button" data-go="4" aria-label="Ir a página 5"></button>
+      </div>
+      <button id="next" type="button" aria-label="Página siguiente">Siguiente →</button>
+    </nav>
+  </main>
+
+  <audio id="page-turn-sound" src="audio/paper.mp3" preload="auto"></audio>
+
+  <script>
+    const book = document.getElementById('book');
+    const spreads = [...document.querySelectorAll('.spread')];
+    const dots = [...document.querySelectorAll('.dot')];
+    const pageTurnSound = document.getElementById('page-turn-sound');
+    let current = 0;
+    let turning = false;
+    let draggingPage = false;
+
+    document.querySelectorAll('.spread[data-page="1"] .portrait-page img').forEach((photo) => {
+      photo.setAttribute('role', 'button');
+      photo.setAttribute('tabindex', '0');
+      photo.setAttribute('aria-pressed', 'false');
+      photo.setAttribute('aria-label', `Mostrar a color: ${photo.alt}`);
+      photo.draggable = false;
+      photo.title = 'Desliza el mouse sobre la foto para revelar el color';
+
+      function setColor(inColor) {
+        photo.classList.toggle('in-color', inColor);
+        photo.style.filter = inColor
+          ? 'grayscale(0) saturate(1.05) contrast(1.04)'
+          : 'grayscale(1) contrast(1.04)';
+        photo.setAttribute('aria-pressed', String(inColor));
+        photo.setAttribute(
+          'aria-label',
+          `${inColor ? 'Mostrar en blanco y negro' : 'Mostrar a color'}: ${photo.alt}`
+        );
+        photo.title = inColor
+          ? 'La foto ya está a color'
+          : 'Desliza el mouse sobre la foto para revelar el color';
+      }
+
+      function toggleColor() {
+        setColor(!photo.classList.contains('in-color'));
+      }
+
+      photo.addEventListener('pointermove', (event) => {
+        event.stopPropagation();
+        if (!photo.classList.contains('in-color')) setColor(true);
+      });
+      photo.addEventListener('pointerleave', () => setColor(false));
+
+      photo.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleColor();
+        }
+      });
+    });
+
+    document.querySelectorAll('.reveal-photo').forEach((photo) => {
+      function setRevealed(revealed) {
+        photo.classList.toggle('revealed', revealed);
+      }
+
+      photo.addEventListener('pointermove', () => setRevealed(true));
+      photo.addEventListener('pointerleave', () => setRevealed(false));
+      photo.addEventListener('focus', () => setRevealed(true));
+      photo.addEventListener('blur', () => setRevealed(false));
+    });
+
+    function createTurnSheet(fromSpread, toSpread, direction) {
+      const isForward = direction > 0;
+      const frontPage = fromSpread.querySelector(isForward ? '.page-right' : '.page-left');
+      const backPage = toSpread.querySelector(isForward ? '.page-left' : '.page-right');
+      if (!frontPage || !backPage) {
+        throw new Error('No se encontraron las páginas para completar el giro.');
+      }
+
+      const sheet = document.createElement('div');
+      sheet.className = 'page-turn-sheet';
+      sheet.setAttribute('aria-hidden', 'true');
+      sheet.inert = true;
+
+      const front = document.createElement('div');
+      front.className = 'page-turn-face page-turn-front';
+      front.append(frontPage.cloneNode(true));
+
+      const back = document.createElement('div');
+      back.className = 'page-turn-face page-turn-back';
+      back.append(backPage.cloneNode(true));
+
+      sheet.append(front, back);
+      book.append(sheet);
+      return sheet;
+    }
+
+    function showPage(nextIndex, direction = 1) {
+      if (turning || nextIndex === current || nextIndex < 0 || nextIndex >= spreads.length) return;
+      const currentSpread = spreads[current];
+      const nextSpread = spreads[nextIndex];
+      const turnSheet = createTurnSheet(currentSpread, nextSpread, direction);
+      nextSpread.classList.add(direction > 0 ? 'turn-under-right' : 'turn-under-left');
+      turnSheet.classList.add(direction > 0 ? 'turn-forward' : 'turn-backward');
+      turning = true;
+
+      pageTurnSound.currentTime = 0;
+      pageTurnSound.play().catch(() => {});
+
+      setTimeout(() => {
+        currentSpread.classList.remove('active');
+        nextSpread.classList.remove('turn-under-right', 'turn-under-left');
+        nextSpread.classList.add('active');
+        dots[current].classList.remove('active');
+        dots[nextIndex].classList.add('active');
+        current = nextIndex;
+        turnSheet.remove();
+        turning = false;
+      }, 900);
+    }
+
+    document.getElementById('prev').addEventListener('click', () => showPage(current - 1, -1));
+    document.getElementById('next').addEventListener('click', () => showPage(current + 1, 1));
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const nextIndex = Number(dot.dataset.go);
+        showPage(nextIndex, nextIndex > current ? 1 : -1);
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight') showPage(current + 1, 1);
+      if (event.key === 'ArrowLeft') showPage(current - 1, -1);
+    });
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    book.addEventListener('touchstart', (event) => {
+      if (
+        event.target.closest('.spread[data-page="1"] .portrait-page img') ||
+        event.target.closest('.photo-link') ||
+        event.target.closest('.reveal-photo')
+      ) return;
+      touchStartX = event.changedTouches[0].clientX;
+      touchStartY = event.changedTouches[0].clientY;
+    }, { passive: true });
+
+    book.addEventListener('touchend', (event) => {
+      if (
+        event.target.closest('.spread[data-page="1"] .portrait-page img') ||
+        event.target.closest('.photo-link') ||
+        event.target.closest('.reveal-photo')
+      ) return;
+      const deltaX = event.changedTouches[0].clientX - touchStartX;
+      const deltaY = event.changedTouches[0].clientY - touchStartY;
+
+      if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX < 0) showPage(current + 1, 1);
+        if (deltaX > 0) showPage(current - 1, -1);
+      }
+    }, { passive: true });
+
+    let dragStartX = 0;
+
+    book.addEventListener('pointerdown', (event) => {
+      if (
+        event.pointerType === 'touch' ||
+        turning ||
+        event.target.closest('.spread[data-page="1"] .portrait-page img') ||
+        event.target.closest('.photo-link') ||
+        event.target.closest('.reveal-photo')
+      ) return;
+      dragStartX = event.clientX;
+      draggingPage = true;
+      book.setPointerCapture(event.pointerId);
+    });
+
+    book.addEventListener('pointerup', (event) => {
+      if (!draggingPage) return;
+      const deltaX = event.clientX - dragStartX;
+      draggingPage = false;
+      if (Math.abs(deltaX) > 70) {
+        if (deltaX < 0) showPage(current + 1, 1);
+        if (deltaX > 0) showPage(current - 1, -1);
+      }
+    });
+
+    book.addEventListener('pointercancel', () => {
+      draggingPage = false;
+    });
+  </script>
+</body>
+</html>
+  

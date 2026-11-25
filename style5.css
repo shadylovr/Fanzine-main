@@ -1,0 +1,326 @@
+@font-face {
+  font-family: font ;
+  src: url("fonts/svenings.ttf");
+  
+}
+@font-face {
+  font-family: aston ;
+  src: url("fonts/Aston\ Script.ttf");
+  
+}
+@font-face {
+  font-family: edit ;
+  src: url("fonts/PPEditorialNew-UltralightItalic-BF644b214ff1e9b.otf");
+  
+}
+body {
+  in-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px 12px;
+  overflow-x: hidden;
+  background: #161616 url("assets/fondo3.jpg") center / cover fixed no-repeat;
+}
+.portrait-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(94vw, 1150px);
+  max-width: 100%;
+  gap: 18px;
+  transform: translateX(-24px);
+}
+
+.portrait-layout h1 {
+  margin: 64px 0 0;
+  max-width: 100%;
+  color: #f2a8c0;
+  font-family: aston;
+  font-size: clamp(44px, 9vw, 98px);
+  font-weight: 400;
+  text-shadow: none;
+  line-height: .95;
+  text-align: center;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.click-hint {
+  margin: 0;
+  color: #a7a45b;
+  font-family: edit;
+  font-size: clamp(13px, 1.5vw, 18px);
+  letter-spacing: .12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.photo-hint {
+  margin: 0;
+  color: #ffffff;
+  font-family: edit;
+  font-size: clamp(13px, 1.5vw, 18px);
+  letter-spacing: .12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.image-switch {
+  position: relative;
+  display: block;
+  width: min(76vw, 420px);
+  aspect-ratio: 4 / 5;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.image-switch img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 700ms ease;
+}
+
+.image-switch .normal-image,
+.image-switch.is-normal .shadow-image {
+  opacity: 0;
+}
+
+.image-switch.is-normal .normal-image {
+  opacity: 1;
+}
+
+.image-switch:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 6px;
+}
+
+.feature-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3vw, 36px);
+  width: min(94vw, 1150px);
+}
+
+.photo-switches {
+  display: flex;
+  flex: 0 1 min(27vw, 220px);
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+}
+
+.photo-switch {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+  transition: transform 320ms ease;
+}
+
+.photo-switch.is-normal {
+  z-index: 1;
+  transform: scale(1.4);
+}
+
+.photo-switch img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 700ms ease, filter 700ms ease;
+}
+
+.photo-switch .shadow-image {
+  filter: grayscale(1) brightness(.95);
+}
+
+.photo-switch::after {
+  position: absolute;
+  inset: 0;
+  background: #f2b1cb;
+  content: "";
+  mix-blend-mode: color;
+  pointer-events: none;
+  transition: opacity 700ms ease;
+}
+
+.photo-switch .normal-image {
+  opacity: 0;
+}
+
+.photo-switch.is-normal .shadow-image {
+  opacity: 0;
+}
+
+.photo-switch.is-normal::after {
+  opacity: 0;
+}
+
+.photo-switch.is-normal .normal-image {
+  opacity: 1;
+}
+
+.photo-switch:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 6px;
+}
+
+.photo-copy {
+  flex: 1;
+  min-width: 0;
+  max-width: 540px;
+  margin: 0;
+  padding: 18px 0 18px 22px;
+  border-left: 1px solid rgba(243, 239, 228, .65);
+  color: #ffffff;
+  font-family: edit;
+  font-size: clamp(25px, 1.7vw, 30px);
+  letter-spacing: .12em;
+  line-height: 1.45;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.framed-video {
+  position: relative;
+  z-index: 0;
+  width: min(96vw, 1040px);
+  aspect-ratio: 16 / 9;
+  margin-top: 96px;
+  transform: translateY(-24px);
+}
+
+.framed-video iframe {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  z-index: 0;
+  width: 60%;
+  height: 60%;
+  border: 0;
+}
+
+.video-frame-overlay {
+  position: absolute;
+  top: -4.5%;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 109%;
+  object-fit: fill;
+  opacity: .88;
+  filter: blur(.7px) drop-shadow(0 8px 18px rgba(0, 0, 0, .18));
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.video-caption {
+  max-width: 900px;
+  margin: 0;
+  color: #e7db7e;
+  font-family: aston;
+  font-size: clamp(30px, 2.1vw, 55px);
+  letter-spacing: .08em;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 24px);
+  width: min(94vw, 1150px);
+}
+
+.photo-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.photo-gallery img:first-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(100%, 800px);
+}
+
+.profile-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.profile-navigation a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border: 1px solid rgba(243, 239, 228, .65);
+  color: #a291a3;
+  font-family: edit;
+  font-size: clamp(13px, 1.5vw, 18px);
+  letter-spacing: .08em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.profile-navigation a:hover,
+.profile-navigation a:focus-visible {
+  background-color: #474d31;
+  color: #161616;
+}
+
+@media (max-width: 760px) {
+  .feature-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photo-switches {
+    flex: none;
+    width: min(48vw, 220px);
+  }
+
+  .photo-copy {
+    flex: none;
+    width: min(72vw, 460px);
+    max-width: 100%;
+    padding: 12px 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(243, 239, 228, .65);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image-switch img,
+  .photo-switch img,
+  .photo-switch::after {
+    transition: none;
+  }
+
+  .photo-switch {
+    transition: none;
+  }
+}
