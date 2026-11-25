@@ -124,6 +124,13 @@
     let turning = false;
     let draggingPage = false;
 
+    const requestedPage = Number(location.hash.match(/^#page-(\d+)$/)?.[1]);
+    if (Number.isInteger(requestedPage) && requestedPage >= 1 && requestedPage <= spreads.length) {
+      current = requestedPage - 1;
+      spreads.forEach((spread, index) => spread.classList.toggle('active', index === current));
+      dots.forEach((dot, index) => dot.classList.toggle('active', index === current));
+    }
+
     document.querySelectorAll('.spread[data-page="1"] .portrait-page img').forEach((photo) => {
       photo.setAttribute('role', 'button');
       photo.setAttribute('tabindex', '0');

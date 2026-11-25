@@ -14,25 +14,69 @@
       <img class="shadow-image" src="assets/sombra4.png" alt="">
       <img class="normal-image" src="assets/normal3.jpg" alt="Portada editorial de Olivia Rodrigo">
     </button>
-    <div class="video-row">
-      <video class="jen-video" src="assets/wiv.mov" controls autoplay muted loop playsinline preload="auto" aria-label="Video de Olivia Rodrigo"></video>
-      <div class="video-copy">La edición de Vogue November 2026 estuvo a cargo de Szilveszter Makó y el estilismo de Tabitha Simmons, con una estética pictórica, teatral y surrealista.</div>
+    <p class="series-instruction">Haz clic sobre una imagen para conocer cada serie</p>
+    <div class="series-row" aria-label="Fotografías de la serie">
+      <button class="series-trigger" type="button" data-series="1" aria-label="Ver las fotografías de la serie 1" aria-haspopup="dialog">
+        <img src="assets/serie1.jpg" alt="Serie uno de Olivia Rodrigo">
+        <span class="series-label">Serie 1</span>
+      </button>
+      <button class="series-trigger" type="button" data-series="2" aria-label="Ver las fotografías de la serie 2" aria-haspopup="dialog">
+        <img src="assets/serie2.jpg" alt="Serie dos de Olivia Rodrigo">
+        <span class="series-label">Serie 2</span>
+      </button>
+      <button class="series-trigger" type="button" data-series="3" aria-label="Ver las fotografías de la serie 3" aria-haspopup="dialog">
+        <img src="assets/serie3.jpg" alt="Serie tres de Olivia Rodrigo">
+        <span class="series-label">Serie 3</span>
+      </button>
     </div>
-    <div class="photo-gallery">
-      <img src="assets/oli.jpg" alt="Fotografía editorial de Olivia Rodrigo 1">
-      <img src="assets/wall.jpg" alt="Fotografía editorial de Olivia Rodrigo 2">
-      <img src="assets/wall2.jpg" alt="Fotografía editorial de Olivia Rodrigo 3">
+    <div class="series-media-row">
+      <p class="series-copy">
+Olivia Rodrigo protagonizó la portada de la edición del cuarto aniversario de Vogue Philippines correspondiente a septiembre/octubre de 2026. La sesión editorial celebró su herencia filipina con una estética pictórica y etérea.</p>
+      <video class="series-video" src="assets/oli.mov" autoplay muted loop playsinline controls preload="auto" aria-label="Video de Olivia Rodrigo"></video>
     </div>
+    <section class="fashion-archive" aria-labelledby="fashion-archive-title">
+      <h2 id="fashion-archive-title">FASHION ARCHIVE</h2>
+      <div class="fashion-row">
+        <figure class="fashion-item" tabindex="0">
+          <img src="assets/f.1.jpg" alt="Look de Olivia Rodrigo para Abodi Transylvania">
+          <figcaption>Abodi Transylvania</figcaption>
+        </figure>
+        <figure class="fashion-item" tabindex="0">
+          <img src="assets/f.2.jpg" alt="Look de Olivia Rodrigo de Joey Samson">
+          <figcaption>Joey Samson</figcaption>
+        </figure>
+        <figure class="fashion-item" tabindex="0">
+          <img src="assets/f.3.jpg" alt="Look de Olivia Rodrigo para ERDEM">
+          <figcaption>ERDEM</figcaption>
+        </figure>
+      </div>
+    </section>
+    <dialog class="series-dialog" aria-labelledby="series-dialog-title">
+      <div class="series-dialog-header">
+        <h2 id="series-dialog-title"></h2>
+        <button class="series-dialog-close" type="button">Cerrar</button>
+      </div>
+      <div class="series-dialog-gallery"></div>
+    </dialog>
     <nav class="profile-navigation" aria-label="Navegación">
-      <a href="inside.html">Página anterior</a>
+      <a href="inside.html#page-5">Página anterior</a>
       <a href="index.html">Volver al inicio</a>
     </nav>
   </main>
-  <audio id="cover-sound" src="audio/beat.mp3" preload="auto"></audio>
+  <audio id="cover-sound" src="audio/www.mp3" preload="auto"></audio>
   <audio id="app-sound" src="audio/app.mp3" preload="auto"></audio>
 
   <script>
     const imageSwitch = document.querySelector('.image-switch');
+    const seriesDialog = document.querySelector('.series-dialog');
+    const seriesDialogTitle = document.getElementById('series-dialog-title');
+    const seriesDialogGallery = document.querySelector('.series-dialog-gallery');
+    const seriesDialogClose = document.querySelector('.series-dialog-close');
+    const seriesImages = {
+      1: ['assets/serie1.1.jpg', 'assets/serie1.2.jpg', 'assets/serie1.3.jpg'],
+      2: ['assets/serie2.1.jpg', 'assets/serie2.2.jpg', 'assets/serie2.3.jpg'],
+      3: ['assets/serie3.1.jpg', 'assets/serie3.2.jpg', 'assets/serie3.3.jpg']
+    };
     const coverSounds = [
       document.getElementById('cover-sound'),
       document.getElementById('app-sound')
@@ -47,6 +91,30 @@
           console.error(`No se pudo reproducir ${sound.src}.`, error);
         });
       });
+    });
+
+    document.querySelectorAll('.series-trigger').forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const seriesNumber = trigger.dataset.series;
+        const photos = seriesImages[seriesNumber];
+        if (!photos) {
+          throw new Error(`No se encontraron fotos para la serie ${seriesNumber}.`);
+        }
+
+        seriesDialogTitle.textContent = `Serie ${seriesNumber}`;
+        seriesDialogGallery.replaceChildren(...photos.map((src, index) => {
+          const image = document.createElement('img');
+          image.src = src;
+          image.alt = `Fotografía ${index + 1} de la serie ${seriesNumber}`;
+          return image;
+        }));
+        seriesDialog.showModal();
+      });
+    });
+
+    seriesDialogClose.addEventListener('click', () => seriesDialog.close());
+    seriesDialog.addEventListener('click', (event) => {
+      if (event.target === seriesDialog) seriesDialog.close();
     });
   </script>
 </body>

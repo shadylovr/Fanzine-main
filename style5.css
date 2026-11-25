@@ -66,6 +66,33 @@ body {
   text-transform: uppercase;
 }
 
+.series-instruction {
+  margin: 0;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 6px;
+  background: rgba(18, 18, 18, .74);
+  color: #fff;
+  font-family: edit, Georgia, serif;
+  font-size: clamp(13px, 1.5vw, 18px);
+  letter-spacing: .12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.series-label {
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 6px;
+  background: rgba(18, 18, 18, .74);
+  color: #fff;
+  font-family: edit, Georgia, serif;
+  font-size: clamp(14px, 1.5vw, 18px);
+  letter-spacing: .08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .image-switch {
   position: relative;
   display: block;
